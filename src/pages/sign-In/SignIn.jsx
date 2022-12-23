@@ -6,18 +6,18 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 const useStyle=makeStyles({
-    page:{
-        height:'100vh',        
-        backgroundColor:'lightgrey',
-    },
+    // page:{
+    //     height:'100vh',
+    //     width:'100vw',        
+    //     backgroundColor:'lightgrey',
+    // },
     mainContainer:{
         display:'flex',
         position:'relative',
         boxSizing:'border-box',
         height:'64vh',
         width:'28vw',
-        left:'50vw',
-        top:'18vh',
+        bottom:'20px',
     },
     subContainer:{
         display:'flex',
@@ -27,7 +27,7 @@ const useStyle=makeStyles({
         alignItems:'center',
         left:'3.5vw',
         height:'100%',
-        width:'75%'
+        width:'75%',
     },
     upButtons:{
         display:'flex',
@@ -96,15 +96,18 @@ const useStyle=makeStyles({
     }
 })
 
-function SignIn() {
+function SignIn(props) {
     const classes=useStyle()
+    const switchLogin1=()=>{
+        props.switchLogin()
+    }
   return (
-        <Box className={classes.page}>
+        <Box>
             <Paper className={classes.mainContainer} elevation={3}>
                 <Box className={classes.subContainer}>
                     <Box className={classes.upButtons}>
                         <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} >LOGIN</Button>
-                        <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} >SIGNUP</Button>
+                        <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} onClick={switchLogin1} >SIGNUP</Button>
                     </Box>
                     <Box className={classes.txtbox}>
                         <Box><span className={classes.txt}>Email Id</span>

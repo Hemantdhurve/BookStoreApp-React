@@ -7,18 +7,18 @@ import TextField from '@mui/material/TextField';
 
 
 const useStyle=makeStyles({
-    page1:{
-    height:'100vh',        
-    backgroundColor:'grey',
-    },
+    // page1:{
+    // height:'100vh',  
+    // width:'100vw',       
+    // backgroundColor:'grey',
+    // },
     mainContainer1:{
         display:'flex',
         position:'relative',
         boxSizing:'border-box',
         height:'64vh',
-        width:'28vw',
-        left:'50vw',
-        top:'18vh',
+        width:'28vw',        
+        bottom:'20px',
     },
     subContainer1:{
         display:'flex',
@@ -63,14 +63,17 @@ const useStyle=makeStyles({
     }
 
 })
-function SignUp() {
+function SignUp(props) {
     const classes=useStyle()
+    const switchSignup1=()=>{
+        props.switchSignup()
+    }
   return (
-    <Box className={classes.page1}>
-        <Paper className={classes.mainContainer1}>
+    <Box >
+        <Paper className={classes.mainContainer1} elevation={3}>
             <Box className={classes.subContainer1}>
                 <Box className={classes.upButtons}>
-                    <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} >LOGIN</Button>
+                    <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} onClick={switchSignup1}>LOGIN</Button>
                     <Button variant="text" style={{fontWeight:'600',fontSize:'20px',color:'black'}} >SIGNUP</Button>
                 </Box>
                 <Box className={classes.txtbox1}>
@@ -91,7 +94,6 @@ function SignUp() {
                     <Button variant="contained" fullwidth='true' sx={{backgroundColor:'#A03037 !important'}}>SignUp</Button>
                 </Box>
             </Box>
-
         </Paper>
     </Box>
   )

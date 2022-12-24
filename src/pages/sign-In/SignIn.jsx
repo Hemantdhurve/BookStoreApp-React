@@ -4,7 +4,8 @@ import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { signInAPI, signUpAPI } from '../../services/UserService';
+import { signInAPI} from '../../services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
@@ -145,7 +146,7 @@ function SignIn(props) {
         }
 
         if(checkEmail===true && checkPassword===true){
-            signUpAPI(logInstate)
+            signInAPI(logInstate)
             .then((response)=>console.log(response))
             .catch((error)=>console.log(error))
             console.log('Login SuccessFul')
@@ -155,6 +156,12 @@ function SignIn(props) {
 
     const switchLogin1 = () => {
         props.switchLogin()
+    }
+
+    const navigate = useNavigate()
+
+    const navForget=()=>{
+        navigate('/dashboard2')
     }
     return (
         <Box>
@@ -166,14 +173,14 @@ function SignIn(props) {
                     </Box>
                     <Box className={classes.txtbox}>
                         <Box><span className={classes.txt}>Email Id</span>
-                            <TextField onChange={takeEmail} error={regexState.emailBorder} helperText={regexState.emailHelper}size='small' fullWidth='true' style={{height:'50px'}}/>
+                            <TextField onChange={takeEmail} error={regexState.emailBorder} helperText={regexState.emailHelper} size='small' fullWidth='true' style={{height:'50px'}}/>
                         </Box>
                         <Box className={classes.pass}><span className={classes.txt}>Password</span>
                             <TextField onChange={takePassword} error={regexState.passwordBorder} helperText={regexState.passwordHelper} size='small' fullWidth='true' style={{height:'50px'}}/>
                         </Box>
                     </Box>
                     <Box className={classes.passBtn}>
-                        <Button variant="text" size='small' style={{ fontWeight: '100', fontSize: '10px', color: 'black' }} >Forget Password?</Button>
+                        <Button variant="text" size='small' style={{ fontWeight: '100', fontSize: '10px', color: 'black' }} onClick={navForget} >Forget Password?</Button>
                     </Box>
                     <Box className={classes.loginBtn}>
                         <Button variant="contained" sx={{ backgroundColor: '#A03037 !important' }} onClick={logInSuccess} fullwidth='bool'>Login</Button>

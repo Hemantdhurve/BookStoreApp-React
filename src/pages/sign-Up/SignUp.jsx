@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { signUpAPI } from '../../services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 const fullnameRegex = /^([A-Z]{1}[a-z]{2,}$)/;
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
@@ -107,6 +108,9 @@ function SignUp(props) {
         console.log(event.target.value)
         setsignUpState((prevState) => ({ ...prevState, mobileNumber: Number(event.target.value) }))
     }
+
+    const navigate=useNavigate()
+
     const signUpSuccess = () => {
         console.log(signUpstate)
     
@@ -145,12 +149,15 @@ function SignUp(props) {
         else if (checkMobileNumber === false) {
           setRegexState((prevState) => ({ ...prevState, mobileNumberBorder: true, mobileNumberHelper: "Enter correct Formatted Mobile Number" }))
         }
-    
+
+
         if (checkFullName === true && checkEmail === true && checkPassword === true && checkMobileNumber === true) {
           signUpAPI(signUpstate)
-            .then((response) => { console.log(response) })
+            .then((response) => { console.log(response) 
+              navigate('/') })
             .catch((error) => { console.log(error) })
-          console.log('SignUp Successful')         
+          console.log('SignUp Successful') 
+                  
         }    
       }
     

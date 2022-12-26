@@ -4,6 +4,7 @@ import Dashboard2 from '../dashboard2/Dashboard2';
 import Dashboard1 from '../dashboard1/Dashboard1';
 import ForgetPassword from '../forgetPassword/ForgetPassword';
 import ResetPassword from '../resetPassword/ResetPassword';
+import DashboardMain from '../dashboardMain/DashboardMain';
 
 function Router1() {
   return (
@@ -14,6 +15,7 @@ function Router1() {
               <Route path='/dashboard2' element={<Dashboard2 />}/>
               <Route path='/forgetpassword' element={<ForgetPassword />}/>
               <Route path='/resetpassword' element={<ResetPassword />}/>
+              <Route path='/dashboardMain' element={<DashboardMain />}/>
           </Routes>
         </Router>
     </div>

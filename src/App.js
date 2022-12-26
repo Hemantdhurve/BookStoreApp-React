@@ -7,6 +7,9 @@ import ForgetPassword from './pages/forgetPassword/ForgetPassword';
 import ResetPassword from './pages/resetPassword/ResetPassword';
 import Dashboard2 from './pages/dashboard2/Dashboard2';
 import Router1 from './pages/router/Router1';
+import Header from './components/header/Header';
+import Book from './components/book/Book';
+import DashboardMain from './pages/dashboardMain/DashboardMain';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
       {/* <ResetPassword /> */}
       {/* <Dashboard2 /> */}
       <Router1 />
+      {/* <Header /> */}
+      {/* <Book /> */}
+      {/* <DashboardMain /> */}
     </div>
   );
 }

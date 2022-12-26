@@ -5,7 +5,7 @@ import SignUp from './pages/sign-Up/SignUp';
 import Dashboard1 from './pages/dashboard1/Dashboard1';
 import ForgetPassword from './pages/forgetPassword/ForgetPassword';
 import ResetPassword from './pages/resetPassword/ResetPassword';
-import Dashboard2 from './pages/dasboard2/Dashboard2';
+import Dashboard2 from './pages/dashboard2/Dashboard2';
 import Router1 from './pages/router/Router1';
 
 function App() {

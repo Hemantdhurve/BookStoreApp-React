@@ -7,38 +7,7 @@ import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined
 
 
 const useStyle = makeStyles({
-    topbox: {
-        display: 'flex',
-        position: 'relative',
-        left: '15vw',
-        width: '70vw',
-        top:'2vh',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    topinbox: {
-        display: 'flex',
-        position: 'relative',
-        alignItems: 'center',
-        width: '13%'
-    },
-    txtBook: {
-        fontSize: '20px',
-        fontWeight: '600'
-    },
-    subtxt: {
-        position: 'relative',
-        left: '5px',
-        fontSize: '12px',
-        fontWeight: '500',
-        color: '#9D9D9D'
-    },
-    dropselect: {
-        height: '5vh',
-        width: '13vw',
-        outline: 'none',
-        fontSize: '15px',
-    },
+    
     bookBox: {
         display: 'flex',
         flexDirection: 'column',
@@ -108,6 +77,7 @@ const useStyle = makeStyles({
         height:'100%',
         backgroundColor: '#388E3C',        
         justifyContent: 'space-evenly',
+        alignItems:'center',
         color: 'white',
     },
     priceBox: {
@@ -129,21 +99,7 @@ const useStyle = makeStyles({
 function Book(props) {
     const classes = useStyle()
     return (
-        <Box>
-            {/* <Box className={classes.topbox}>
-                <Box className={classes.topinbox}>
-                    <Box className={classes.txtBook}>
-                        Books
-                    </Box>
-                    <Box className={classes.subtxt}>(10 items)</Box>
-                </Box>
-                <select className={classes.dropselect}>
-                    <option value="Sort by relevance">Sort by relevance</option>
-                    <option value="Price: Low to High">Price: Low to High</option>
-                    <option value="Price: High to Low">Price: High to Low</option>
-                    <option value="Newest Arrivals">Newest Arrivals</option>
-                </select>
-            </Box> */}
+        <Box>           
             <Paper className={classes.bookBox} elevation={3} >
                 <Box className={classes.imageBox}>
                     <Box style={{width:'50%',height:'85%'}}>
@@ -163,7 +119,7 @@ function Book(props) {
                                 <Typography variant='subtitle2'>{props.book.rating}</Typography>
                                 <StarPurple500OutlinedIcon style={{ fontSize:'15px' }} />
                             </Box>
-                            <Typography variant='subtitle2' style={{color: '#878787',}}> ( {props.book.ratedCount} )</Typography>
+                            <Typography variant='subtitle2' style={{color: '#878787',}}>({props.book.ratedCount})</Typography>
                         </Box>
                         <Box className={classes.priceBox}>
                             <Typography style={{fontSize: '14px',fontWeight:'700'}}>Rs.{props.book.discountedPrice} </Typography>

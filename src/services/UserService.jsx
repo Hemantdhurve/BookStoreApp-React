@@ -1,14 +1,8 @@
-// import axios from 'axios';
-
-// let headerConfig = {
-//     // headers :{Authorization : `Bearer ${localStorage.getItem("token")}`}
-//     // headers: { Authorization: "Bearer " + localStorage.getItem("token")}
-// }
-
 import axios from "axios";
 
 const headerConfig = {
-    headers: {Authorization:`Bearer ${localStorage.getItem('token')}`}
+    // headers: {Authorization:`Bearer ${localStorage.getItem('token')}`}
+    headers: { Authorization: "Bearer " + localStorage.getItem("token")}
 }
 
 export const signInAPI = (logInstate) => {

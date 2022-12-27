@@ -147,7 +147,8 @@ function SignIn(props) {
 
         if(checkEmail===true && checkPassword===true){
             signInAPI(logInstate)
-            .then((response)=>{console.log(response);
+            .then((response)=>{console.log(response)
+                localStorage.setItem("token", response.data.data)
             navigate('/dashboardMain')
         })
             .catch((error)=>console.log(error))

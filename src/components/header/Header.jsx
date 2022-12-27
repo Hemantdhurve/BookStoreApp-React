@@ -89,7 +89,7 @@ function Header() {
     const classes = useStyle()
 
     return (
-        <Box className={classes.headBox}>
+        <Box className={classes.headBox} >
             <Box className={classes.outHeadBox}>
                 <Box className={classes.inHeadBox}>
                     <Box className={classes.bookimg}>

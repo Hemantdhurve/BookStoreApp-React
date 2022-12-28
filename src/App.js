@@ -10,6 +10,7 @@ import Router1 from './pages/router/Router1';
 import Header from './components/header/Header';
 import Book from './components/book/Book';
 import DashboardMain from './pages/dashboardMain/DashboardMain';
+import SingleBookDetails from './components/singleBookDetails/SingleBookDetails';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       {/* <Header /> */}
       {/* <Book /> */}
       {/* <DashboardMain /> */}
+      {/* <SingleBookDetails /> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Dashboard1 from '../dashboard1/Dashboard1';
 import ForgetPassword from '../forgetPassword/ForgetPassword';
 import ResetPassword from '../resetPassword/ResetPassword';
 import DashboardMain from '../dashboardMain/DashboardMain';
+import SingleBookDetails from '../../components/singleBookDetails/SingleBookDetails';
 
 function Router1() {
   return (
@@ -16,6 +17,7 @@ function Router1() {
               <Route path='/forgetpassword' element={<ForgetPassword />}/>
               <Route path='/resetpassword' element={<ResetPassword />}/>
               <Route path='/dashboardMain' element={<DashboardMain />}/>
+              <Route path='/singleBookDetails' element={<SingleBookDetails />}/>
           </Routes>
         </Router>
     </div>

@@ -4,6 +4,8 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';
+import { getBooksById } from '../../services/DataService';
+import { useNavigate } from 'react-router-dom';
 
 
 const useStyle = makeStyles({
@@ -98,9 +100,15 @@ const useStyle = makeStyles({
 })
 function Book(props) {
     const classes = useStyle()
+
+    const navigate = useNavigate()
+
+    const openBook=()=>{
+        navigate('/singleBookDetails')        
+    }
     return (
         <Box>           
-            <Paper className={classes.bookBox} elevation={3} >
+            <Paper className={classes.bookBox} elevation={3} onClick={openBook}>
                 <Box className={classes.imageBox}>
                     <Box style={{width:'50%',height:'85%'}}>
                         <img className={classes.image} src={props.book.image} />

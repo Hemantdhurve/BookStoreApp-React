@@ -104,6 +104,8 @@ function Book(props) {
     const navigate = useNavigate()
 
     const openBook=()=>{
+        const bookId = props.book.bookId;
+        localStorage.setItem("bookId",JSON.stringify(bookId))
         navigate('/singleBookDetails')        
     }
     return (

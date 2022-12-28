@@ -9,6 +9,7 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import Header from '../header/Header';
 import Rating from '@mui/material/Rating'
 import { getBooksById } from '../../services/DataService';
+import { useNavigate } from 'react-router-dom';
 
 const useStyle = makeStyles({
   topbox: {
@@ -256,6 +257,7 @@ const useStyle = makeStyles({
 
 function SingleBookDetails(props) {
   const classes = useStyle()
+  const bookId = JSON.parse(localStorage.getItem("bookId"));
 
   const [bookDetail, setBookDetail] = useState({ 
     bookTitle: '', 
@@ -271,7 +273,7 @@ function SingleBookDetails(props) {
 
 
   useEffect(() => {
-    getBooksById()
+    getBooksById(bookId)
     .then((response) => {
       console.log(response)
       setBookDetail(response.data.response)
@@ -280,6 +282,11 @@ function SingleBookDetails(props) {
     })
   }, [])
 
+  const navigate=useNavigate()
+
+  const navWishlist=()=>{
+    navigate('/wishlistDashboard')
+  }
   return (
     <Box>
       <Header />
@@ -303,7 +310,7 @@ function SingleBookDetails(props) {
             </Box>
             <Box className={classes.add2Tag}>
               <Button variant="contained" style={{ backgroundColor: '#A03037', width: '46%', borderRadius: '0px' }}>Add to Bag</Button>
-              <Button variant="contained" style={{ backgroundColor: '#333333', width: '46%', borderRadius: '0px' }} startIcon={<FavoriteOutlinedIcon />}>
+              <Button variant="contained" onClick={navWishlist} style={{ backgroundColor: '#333333', width: '46%', borderRadius: '0px' }} startIcon={<FavoriteOutlinedIcon />}>
                 Wishlist
               </Button>
             </Box>
@@ -314,15 +321,13 @@ function SingleBookDetails(props) {
             <Box className={classes.booktextBox}>
               <Box className={classes.titletxt}>
                 {bookDetail.bookTitle}
-                {/* Book Title */}
               </Box>
               <Box className={classes.authortxt}>
                 {bookDetail.author}
-                {/* Author */}
               </Box>
               <Box className={classes.ratingBox}>
                 <Box className={classes.star}>
-                  <Typography variant='h6'>4{bookDetail.rating}</Typography>
+                  <Typography variant='h6'>{bookDetail.rating}</Typography>
                   <StarPurple500OutlinedIcon style={{ fontSize: '20px' }} />
                 </Box>
                 <Typography style={{ color: '#878787', fontSize: '18px' }}>({bookDetail.ratedCount})</Typography>

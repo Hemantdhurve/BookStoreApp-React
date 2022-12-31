@@ -287,6 +287,10 @@ function SingleBookDetails(props) {
   const navWishlist=()=>{
     navigate('/wishlistDashboard')
   }
+
+  const navCart=()=>{
+    navigate('/cartDashboard')
+  }
   return (
     <Box>
       <Header />
@@ -309,7 +313,7 @@ function SingleBookDetails(props) {
               <img className={classes.mainImg} src={bookDetail.image} />
             </Box>
             <Box className={classes.add2Tag}>
-              <Button variant="contained" style={{ backgroundColor: '#A03037', width: '46%', borderRadius: '0px' }}>Add to Bag</Button>
+              <Button variant="contained" onClick={navCart} style={{ backgroundColor: '#A03037', width: '46%', borderRadius: '0px' }}>Add to Bag</Button>
               <Button variant="contained" onClick={navWishlist} style={{ backgroundColor: '#333333', width: '46%', borderRadius: '0px' }} startIcon={<FavoriteOutlinedIcon />}>
                 Wishlist
               </Button>

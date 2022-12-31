@@ -68,7 +68,7 @@ function Dashboard1() {
               </Box>
                 {
                   toggle ? <SignUp switchSignup={switchSignup}/> : <SignIn switchLogin={switchLogin} />
-                } 
+                }  
           </Paper>
       </Box>    
   )

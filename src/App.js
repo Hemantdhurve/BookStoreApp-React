@@ -13,6 +13,8 @@ import DashboardMain from './pages/dashboardMain/DashboardMain';
 import SingleBookDetails from './components/singleBookDetails/SingleBookDetails';
 import WishListDashboard from './pages/wishlistDashboard/WishListDashboard';
 import WishList from './components/wishlist/WishList';
+import Cart from './components/cart/Cart';
+import CartDashboard from './pages/cartDashboard/CartDashboard';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
       {/* <SingleBookDetails /> */}
       {/* <WishListDashboard /> */}
       {/* <WishList /> */}
+      {/* <Cart /> */}
+      {/* <CartDashboard /> */}
     </div>
   );
 }

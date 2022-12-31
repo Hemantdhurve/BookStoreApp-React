@@ -7,6 +7,7 @@ import ResetPassword from '../resetPassword/ResetPassword';
 import DashboardMain from '../dashboardMain/DashboardMain';
 import SingleBookDetails from '../../components/singleBookDetails/SingleBookDetails';
 import WishListDashboard from '../wishlistDashboard/WishListDashboard';
+import CartDashboard from '../cartDashboard/CartDashboard';
 
 function Router1() {
   return (
@@ -20,6 +21,8 @@ function Router1() {
               <Route path='/dashboardMain' element={<DashboardMain />}/>
               <Route path='/singleBookDetails' element={<SingleBookDetails />}/>
               <Route path='/wishlistDashboard' element={<WishListDashboard />}/>
+              <Route path='/cartDashboard' element={<CartDashboard />}/>
+
           </Routes>
         </Router>
     </div>
